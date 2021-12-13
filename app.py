@@ -10,8 +10,6 @@ from linebot.models import (
     MessageEvent, TextMessage, TextSendMessage,
 )
 
-import MeCab
-
 
 line_bot_api = LineBotApi(
     'BBRbzcN0GjBelHIlfA0QkwsCGqN5kNVJcH9m5kEO//OPT74Ml0i5YAjHeEWUHU1HmAUfsJ/7bn6mQ1v1yQQSTIkZBnCdDDTrCrpqV3jORXuEy2oiPUXsLSbgjd6LHz1kdFnvcJxIWbpj0qrrlXewiwdB04t89/1O/w1cDnyilFU=')
@@ -33,10 +31,6 @@ def callback():
     # get request body as text
     body = request.get_data(as_text=True)
     app.logger.info("Request body: " + body)
-
-    mecab = MeCab.Tagger("-Ochasen")
-    testwords = "今日の天気は晴れです。"
-    print(mecab.parse(testwords))
 
     # handle webhook body
     try:
