@@ -16,7 +16,6 @@ from SentensePiece import reply
 
 
 app = Flask(__name__)
-app.config.from_pyfile('config.cfg')
 
 line_bot_api = LineBotApi(
     'BBRbzcN0GjBelHIlfA0QkwsCGqN5kNVJcH9m5kEO//OPT74Ml0i5YAjHeEWUHU1HmAUfsJ/7bn6mQ1v1yQQSTIkZBnCdDDTrCrpqV3jORXuEy2oiPUXsLSbgjd6LHz1kdFnvcJxIWbpj0qrrlXewiwdB04t89/1O/w1cDnyilFU=')
