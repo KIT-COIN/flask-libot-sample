@@ -51,6 +51,9 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     # ここで文章生成
+    line_bot_api.reply_message(
+        event.reply_token,
+        TextSendMessage(text="返信考え中！"))
 
     reply_text = reply()
 
@@ -59,6 +62,10 @@ def handle_message(event):
     line_bot_api.reply_message(
         event.reply_token,
         TextSendMessage(text=reply_text))
+
+    line_bot_api.reply_message(
+        event.reply_token,
+        TextSendMessage(text="返信完了！"))
 
 
 if __name__ == "__main__":
