@@ -98,8 +98,6 @@ def reply():
 
     generate = generate_sentence2(model)
 
-    print(generate)
-
     return generate
 
 
