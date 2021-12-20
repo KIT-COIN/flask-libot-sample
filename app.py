@@ -10,7 +10,9 @@ from linebot.models import (
     MessageEvent, TextMessage, TextSendMessage,
 )
 
-import sentencepiece as spm
+# import sentencepiece as spm
+
+from SentensePiece import reply
 
 
 line_bot_api = LineBotApi(
@@ -34,7 +36,7 @@ def callback():
     body = request.get_data(as_text=True)
     app.logger.info("Request body: " + body)
 
-    sp = spm.SentencePieceProcessor()
+    # sp = spm.SentencePieceProcessor()
 
     # handle webhook body
     try:
@@ -48,6 +50,12 @@ def callback():
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
+    # ここで文章生成
+
+    text = reply()
+
+    print(text)
+
     line_bot_api.reply_message(
         event.reply_token,
         TextSendMessage(text=event.message.text))
