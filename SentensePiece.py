@@ -104,7 +104,9 @@ def reply():
 
     generate = generate_sentence2(model)
 
-    return generate
+    reply_text = generate[1:].replace('\n', '')
+
+    return reply_text
 
 
 # if __name__ == '__main__':
