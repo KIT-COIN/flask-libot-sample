@@ -12,7 +12,7 @@ from linebot.models import (
 
 # import sentencepiece as spm
 
-from SentensePiece import reply
+# from SentensePiece import reply
 
 
 line_bot_api = LineBotApi(
@@ -52,9 +52,9 @@ def callback():
 def handle_message(event):
     # ここで文章生成
 
-    text = reply()
+    # text = reply()
 
-    print(text)
+    # print(text)
 
     line_bot_api.reply_message(
         event.reply_token,
