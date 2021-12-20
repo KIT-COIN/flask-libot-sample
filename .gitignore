@@ -1,1 +1,7 @@
 __pycache__
+
+# sentencepieceの生成ファイル
+sentencepiece.model
+sentencepiece.vocab
+
+text_file

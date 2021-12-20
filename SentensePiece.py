@@ -71,6 +71,7 @@ def generate_sentence2(model):
 def reply():
     import codecs
     import sentencepiece as spm
+    import os
 
     text_file = 'lineTalk.txt'
     person_name = '渡邉 渉'
@@ -78,7 +79,12 @@ def reply():
     coupus = read_text(text_file)
     sentence = preprocessing(coupus, person_name)
 
-    new_text_file = make_file_name(person_name, text_file)
+    dir_name = "text_file"
+
+    if not os.path.isdir(dir_name):
+        os.mkdir(dir_name)
+
+    new_text_file = make_file_name(dir_name + "/" + person_name, text_file)
 
     print(*sentence, sep="\n", file=codecs.open(new_text_file, "w", "utf-8"))
 
