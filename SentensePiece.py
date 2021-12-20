@@ -84,8 +84,9 @@ def reply():
 
     # 学習の実行
     spm.SentencePieceTrainer.Train(
-        '--input=shouLineTalk.txt --model_prefix=sentencepiece --vocab_size=4000 --character_coverage=0.9995 --pad_id=3'
-    )
+        '--input=' +
+        new_text_file +
+        ' --model_prefix=sentencepiece --vocab_size=4000 --character_coverage=0.9995 --pad_id=3')
 
     # モデルの作成
     sp = spm.SentencePieceProcessor()
